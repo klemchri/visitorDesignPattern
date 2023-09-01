@@ -15,6 +15,6 @@
 
 # Visitor Design Pattern
 
-![enter image description here](https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Visitor_design_pattern.svg/430px-Visitor_design_pattern.svg.png)
+![enter image description here](https://i.imgur.com/8tQUM2L.png)
 
 Quelle: Wikipedia
