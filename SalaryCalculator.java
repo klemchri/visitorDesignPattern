@@ -10,4 +10,11 @@ class SalaryCalculator implements Visitor {
         double salary = employee.getHourlyRate() * 20 * 8; // Annahme: 20 Arbeitstage, 8 Stunden pro Tag
         System.out.println(employee.getName() + " erhält einen Gehaltsscheck von " + salary);
     }
+
+    
+    @Override
+    public void visit(Azubi employee) {
+        double salary = employee.getAusbildungsverguetung() / 2;
+        System.out.println(employee.getName() + " erhält einen Gehaltsscheck von " + salary);
+    }
 }
