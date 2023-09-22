@@ -6,3 +6,4 @@ public class SortierAnwendung {
     public static void main(String[] args) {
         // TODO
     }
+}
