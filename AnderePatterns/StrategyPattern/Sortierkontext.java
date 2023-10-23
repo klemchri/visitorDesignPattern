@@ -12,6 +12,6 @@ class Sortierkontext {
     }
 
     public void sortiere(int[] arr) {
-        //TODO : tip: rekusiv gehts auch.
+        strategie.sortieren(arr);
     }
 }

@@ -1,22 +1,34 @@
 package AnderePatterns.StrategyPattern;
 
-// Konkrete Implementierung der Bubble-Sort-Strategie
-class BubbleSort implements Sortierstrategie {
+// Konkrete Implementierung der Quick-Sort-Strategie
+public class QuickSort implements Sortierstrategie {
     @Override
     public void sortieren(int[] arr) {
-        int n = arr.length;
-        boolean getauscht;
-        do {
-            getauscht = false;
-            for (int i = 1; i < n; i++) {
-                if (arr[i - 1] > arr[i]) {
-                    // Tausche die Elemente
-                    int temp = arr[i - 1];
-                    arr[i - 1] = arr[i];
-                    arr[i] = temp;
-                    getauscht = true;
-                }
+        quickSort(arr, 0, arr.length - 1);
+    }
+
+    private void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int pivotIndex = partition(arr, low, high);
+            quickSort(arr, low, pivotIndex - 1);
+            quickSort(arr, pivotIndex + 1, high);
+        }
+    }
+
+    private int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = low - 1;
+        for (int j = low; j < high; j++) {
+            if (arr[j] <= pivot) {
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
-        } while (getauscht);
+        }
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+        return i + 1;
     }
 }
